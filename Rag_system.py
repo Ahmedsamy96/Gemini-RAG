@@ -13,11 +13,8 @@ from langchain_google_genai import ChatGoogleGenerativeAI #
 from langchain.chains.question_answering import load_qa_chain #to chain the prompts
 from langchain.prompts import PromptTemplate #to create prompt templates
 
-from dotenv import load_dotenv
-load_dotenv()
-
-WEAVIATE_API_KEY = os.getenv("WEAVIATE_API_KEY")
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+WEAVIATE_API_KEY = st.secrets["WEAVIATE_API_KEY"]
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 genai.configure(api_key=GOOGLE_API_KEY)
 
 @st.cache_data
