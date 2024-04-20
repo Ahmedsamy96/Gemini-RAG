@@ -17,6 +17,9 @@ WEAVIATE_API_KEY = st.secrets["WEAVIATE_API_KEY"]
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 genai.configure(api_key=GOOGLE_API_KEY)
 
+static_pdf_file = r"C:/Users/ahmed/OneDrive/Documents/Gemini_RAG/data/Actual Budget Report 2022.pdf"
+
+
 @st.cache_data
 
 def get_pdf_text(pdf_docs):
@@ -88,34 +91,37 @@ def user_input(user_question):
     print(response)
     st.write("Reply: ", response["output_text"])
 
-def clear_chat_history():
-    st.session_state.messages = [
-        {"role": "assistant", "content": "upload some pdfs and ask me a question"}]
-
-
 def main():
-    st.set_page_config(
-        page_title="Gemini PDF Chatbot",
-        page_icon="🤖"
-    )
+    st.set_page_config("Chat PDF")
+    st.header("Chat with PDF using Gemini")
 
-    # Sidebar for uploading PDF files
+    user_question = st.text_input("Ask a Question:")
+
+    if user_question:
+        user_input(user_question)
+
     with st.sidebar:
         st.title("Menu:")
-        pdf_docs = st.file_uploader(
-            "Upload your PDF Files and Click on the Submit & Process Button", accept_multiple_files=True)
+        # Allow users to choose between static and uploaded files
+        use_static_file = st.checkbox("Use Static File", value=True)
+        pdf_docs = None
+        if not use_static_file:
+            pdf_docs = st.file_uploader("Upload your PDF Files and Click on the Submit & Process Button", accept_multiple_files=True)
         if st.button("Submit & Process"):
             with st.spinner("Processing..."):
-                raw_text = get_pdf_text(pdf_docs)
+                if use_static_file and static_pdf_file:
+                    # If using static file, use static_pdf_file
+                    raw_text = get_pdf_text([static_pdf_file])
+                elif pdf_docs:
+                    # If using uploaded files, use uploaded files
+                    raw_text = get_pdf_text(pdf_docs)
+                else:
+                    st.error("No file selected.")
+                    return
+                
                 text_chunks = get_text_chunks(raw_text)
                 get_vector_store(text_chunks)
                 st.success("Done")
-
-    # Main content area for displaying chat messages
-    st.title("Chat with PDF files using Gemini🤖")
-    st.write("Welcome to the chat!")
-    st.sidebar.button('Clear Chat History', on_click=clear_chat_history)
-
 
 if __name__ == "__main__":
     main()
