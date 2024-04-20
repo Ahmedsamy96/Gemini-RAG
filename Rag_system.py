@@ -17,8 +17,8 @@ WEAVIATE_API_KEY = st.secrets["WEAVIATE_API_KEY"]
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 genai.configure(api_key=GOOGLE_API_KEY)
 
-static_pdf_file = r"./data/Actual Budget Report 2022.pdf"
-
+static_pdf_file_1 = r"./data/Actual Budget Report 2022.pdf"
+static_pdf_file_2 = r"./data/Press Release - 2022 Results (Stock Market).pdf"
 
 @st.cache_data
 
@@ -91,6 +91,8 @@ def user_input(user_question):
     print(response)
     st.write("Reply: ", response["output_text"])
 
+
+
 def main():
     st.set_page_config("Chat PDF")
     st.header("Chat with PDF using Gemini")
@@ -102,22 +104,14 @@ def main():
 
     with st.sidebar:
         st.title("Menu:")
-        # Allow users to choose between static and uploaded files
-        use_static_file = st.checkbox("Use Static File", value=True)
-        pdf_docs = None
-        if not use_static_file:
-            pdf_docs = st.file_uploader("Upload your PDF Files and Click on the Submit & Process Button", accept_multiple_files=True)
+        # List of static files (assuming these are paths to the files)
+        static_files = [static_pdf_file_1, static_pdf_file_2]
+        selected_file = st.selectbox("Choose a PDF file:", static_files)
+        
         if st.button("Submit & Process"):
             with st.spinner("Processing..."):
-                if use_static_file and static_pdf_file:
-                    # If using static file, use static_pdf_file
-                    raw_text = get_pdf_text([static_pdf_file])
-                elif pdf_docs:
-                    # If using uploaded files, use uploaded files
-                    raw_text = get_pdf_text(pdf_docs)
-                else:
-                    st.error("No file selected.")
-                    return
+                # Get the text from the selected static PDF file
+                raw_text = get_pdf_text([selected_file])
                 
                 text_chunks = get_text_chunks(raw_text)
                 get_vector_store(text_chunks)
