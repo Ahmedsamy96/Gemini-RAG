@@ -16,14 +16,9 @@ from langchain.prompts import PromptTemplate #to create prompt templates
 from dotenv import load_dotenv
 load_dotenv()
 
-import sys
-sys.path.append(r'C:/Users/ahmed/OneDrive/Documents/Gemini_RAG/data')
-
 WEAVIATE_API_KEY = os.getenv("WEAVIATE_API_KEY")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
-
-static_pdf_file = r"C:/Users/ahmed/OneDrive/Documents/Gemini_RAG/data/Actual Budget Report 2022.pdf"
 
 @st.cache_data
 
@@ -114,10 +109,7 @@ def main():
             pdf_docs = st.file_uploader("Upload your PDF Files and Click on the Submit & Process Button", accept_multiple_files=True)
         if st.button("Submit & Process"):
             with st.spinner("Processing..."):
-                if use_static_file and static_pdf_file:
-                    # If using static file, use static_pdf_file
-                    raw_text = get_pdf_text([static_pdf_file])
-                elif pdf_docs:
+                if pdf_docs:
                     # If using uploaded files, use uploaded files
                     raw_text = get_pdf_text(pdf_docs)
                 else:
