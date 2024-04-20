@@ -88,6 +88,11 @@ def user_input(user_question):
     print(response)
     st.write("Reply: ", response["output_text"])
 
+def clear_chat_history():
+    st.session_state.messages = [
+        {"role": "assistant", "content": "upload some pdfs and ask me a question"}]
+
+
 def main():
     st.set_page_config(
         page_title="Gemini PDF Chatbot",
