@@ -17,7 +17,7 @@ WEAVIATE_API_KEY = st.secrets["WEAVIATE_API_KEY"]
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 genai.configure(api_key=GOOGLE_API_KEY)
 
-static_pdf_file = r"C:/Users/ahmed/OneDrive/Documents/Gemini_RAG/data/Actual Budget Report 2022.pdf"
+static_pdf_file = r"./data/Actual Budget Report 2022.pdf"
 
 
 @st.cache_data
