@@ -89,33 +89,28 @@ def user_input(user_question):
     st.write("Reply: ", response["output_text"])
 
 def main():
-    st.set_page_config("Chat PDF")
-    st.header("Chat with PDF using Gemini")
+    st.set_page_config(
+        page_title="Gemini PDF Chatbot",
+        page_icon="🤖"
+    )
 
-    user_question = st.text_input("Ask a Question:")
-
-    if user_question:
-        user_input(user_question)
-
+    # Sidebar for uploading PDF files
     with st.sidebar:
         st.title("Menu:")
-        # Allow users to choose between static and uploaded files
-        use_static_file = st.checkbox("Use Static File", value=True)
-        pdf_docs = None
-        if not use_static_file:
-            pdf_docs = st.file_uploader("Upload your PDF Files and Click on the Submit & Process Button", accept_multiple_files=True)
+        pdf_docs = st.file_uploader(
+            "Upload your PDF Files and Click on the Submit & Process Button", accept_multiple_files=True)
         if st.button("Submit & Process"):
             with st.spinner("Processing..."):
-                if pdf_docs:
-                    # If using uploaded files, use uploaded files
-                    raw_text = get_pdf_text(pdf_docs)
-                else:
-                    st.error("No file selected.")
-                    return
-                
+                raw_text = get_pdf_text(pdf_docs)
                 text_chunks = get_text_chunks(raw_text)
                 get_vector_store(text_chunks)
                 st.success("Done")
+
+    # Main content area for displaying chat messages
+    st.title("Chat with PDF files using Gemini🤖")
+    st.write("Welcome to the chat!")
+    st.sidebar.button('Clear Chat History', on_click=clear_chat_history)
+
 
 if __name__ == "__main__":
     main()
