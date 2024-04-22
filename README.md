@@ -1,7 +1,7 @@
 # Arabic Chat PDF - Interactive Document Query System
 
 **Project Overview**
-![alt text]([http://url/to/img.png](https://github.com/Ahmedsamy96/Gemini-RAG/blob/main/data/download.png))
+![alt text](https://github.com/Ahmedsamy96/Gemini-RAG/blob/main/data/download.png)
 
   
 * **Description:** Chat PDF is a web application that allows users to ask Arabic questions in natural language about the contents of uploaded PDFs. The system leverages advancements in generative AI and vector embeddings to deliver precise answers directly extracted from PDF documents.
