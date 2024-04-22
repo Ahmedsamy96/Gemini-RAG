@@ -2,7 +2,6 @@
 
 ![alt text](https://github.com/Ahmedsamy96/Gemini-RAG/blob/main/data/BG.jpeg)
 
-
 **Project Overview**
   
 * **Description:** Chat PDF is a web application that allows users to ask Arabic questions in natural language about the contents of uploaded PDFs. The system leverages advancements in generative AI and vector embeddings to deliver precise answers directly extracted from PDF documents.
@@ -86,6 +85,14 @@
 - **Selection of a better LLM model that does well with Arabic text:** This will help you use the tokenizer of the model to transfer learn it not to start from a bad point -Bad means the Model is not trained on Arabic data well- as I may use a super powerful model in English but weak on Arabic text which is misleading and deceptive.
 - **Select a good Vector DB:** One of the most familiar ones is FAISS it was good enough to proceed with it. (Replacements that I tried: Qdrant - Chroma - Weaviate)
 - **Prompt Engineering:** Very important factor that is not hard but has a very high impact on the system response.
+
+**Model Inference**
+The model in the trial is distinguished by 2 things:
+- It does not elaborate on the answer. The easy, no-nonsense response
+- It gives correct answers most of the time, even if they are from tables in most experiments.
+
+![alt text](https://github.com/Ahmedsamy96/Gemini-RAG/blob/main/data/Inference.png)
+
 
 **FAQs**
 
