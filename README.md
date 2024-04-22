@@ -5,6 +5,7 @@
 **Project Overview**
   
 * **Description:** Chat PDF is a web application that allows users to ask Arabic questions in natural language about the contents of uploaded PDFs. The system leverages advancements in generative AI and vector embeddings to deliver precise answers directly extracted from PDF documents.
+<br>
 
 **Features**
 
