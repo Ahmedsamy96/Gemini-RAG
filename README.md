@@ -2,13 +2,13 @@
 
 ![alt text](https://github.com/Ahmedsamy96/Gemini-RAG/blob/main/data/BG.jpeg)
 
-**Project Overview**
+**Project Overview 🤷‍♂️**
   
 * **Description:** Chat PDF is a web application that allows users to ask Arabic questions in natural language about the contents of uploaded PDFs. The system leverages advancements in generative AI and vector embeddings to deliver precise answers directly extracted from PDF documents.
 
 <hr>
 
-**Features**
+**Features 🎶**
 
 * **PDF Ingestion:** Upload and process PDF documents for information retrieval.
 * **Text Extraction:** Accurately extract text content from uploaded PDFs.
@@ -20,7 +20,7 @@
 
 <hr>
 
-**Technology Stack**
+**Technology Stack 🔃**
 
 * **Streamlit:** A Python framework for rapidly developing web applications.
 * **Weaviate (Optional):** A vector database for storing and querying embeddings (not used in the current implementation).
@@ -38,7 +38,7 @@
 * A Google Cloud account with access to Generative AI services ([https://cloud.google.com/ai-platform/docs/technical-overview](https://cloud.google.com/ai-platform/docs/technical-overview))
 * Python 3.8 or later ([https://www.python.org/downloads/](https://www.python.org/downloads/))
 
-**Installation**
+**Installation 👨‍🏫**
 
 1. Clone the repository:
 
@@ -81,7 +81,7 @@
 * **Vector Embedding and Storing:** The `get_vector_store` function generates embeddings for the text chunks using Google's generative AI and stores them using FAISS for efficient retrieval.
 * **Query Handling:** The `user_input` function takes a user query as input, retrieves relevant information using vector similarity search, and generates a response using a generative AI model chained with a prompt template.
 
-**Workflow**
+**Workflow 🛞🌴**
 
 1. **Initialization:** Load configurations and API keys.
 2. **Document Processing:** When a PDF is uploaded or selected, the system extracts and processes the text content.
@@ -98,10 +98,12 @@
 
 <hr>
 
-**Model Inference**
+**Model Inference 📺**
 The model in the trial is distinguished by 2 things:
 - It does not elaborate on the answer. The easy, no-nonsense response
 - It gives correct answers most of the time, even if they are from tables in most experiments.
+
+**Try it yourself: 🍿( https://gemini-rag-monta-ai.streamlit.app/ )🍿**
 
 ![alt text](https://github.com/Ahmedsamy96/Gemini-RAG/blob/main/data/Inference.png)
 
