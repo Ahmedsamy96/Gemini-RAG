@@ -85,9 +85,9 @@
 **FAQs**
 
 * **How does the system handle multiple PDFs?**
-   The UI allows users to select which PDF they want to query against. Each PDF's text is processed and indexed separately.
+   - The UI allows users to select which PDF they want to query against. Each PDF's text is processed and indexed separately.
 * **What types of questions can I ask?**
-   Chat PDF is designed to answer factual questions based on the content of the loaded PDF documents. The accuracy of the answers depends on the quality of the phrasing and the clarity of the information within the PDFs.
+   - Chat PDF is designed to answer factual questions based on the content of the loaded PDF documents. The accuracy of the answers depends on the quality of the phrasing and the clarity of the information within the PDFs.
 * **Is there a limit to the size of the PDF?**
-   Large PDFs are handled by splitting the text into smaller chunks. However, extremely large documents are not avaiable till now we limit it to be 200 mb as large ones may require more processing time.
+   - Large PDFs are handled by splitting the text into smaller chunks. However, extremely large documents are not avaiable till now we limit it to be 200 mb as large ones may require more processing time.
 
