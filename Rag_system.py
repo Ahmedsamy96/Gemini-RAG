@@ -94,8 +94,12 @@ def user_input(user_question):
 
 
 def main():
-    st.set_page_config("Chat PDF")
+    st.set_page_config(page_title="Chat PDF", page_icon=":speech_balloon:")
     st.header("Chat with PDF using Gemini")
+
+    # Display an image (ensure the path to your image is correct)
+    image_path = 'https://github.com/Ahmedsamy96/Gemini-RAG/blob/main/data/BG.jpeg'
+    st.image(image_path, caption='Interactive Chat with Document', width=700)
 
     user_question = st.text_input("Ask a Question:")
 
