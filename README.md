@@ -24,7 +24,7 @@
 * **Google Generative AI:** Google's suite of AI services for generating text embeddings and answering questions in context.
 * **FAISS:** A vector database for storing and querying embeddings for efficient similarity search of vector embeddings
 * **PyPDFLoader:** A Python library for loading and extracting text from PDF files.
-* **LangChain:** A toolkit designed for building language model chains and prompts.
+* **LangChain:** A toolkit designed for building language model chains products and services in a simpler way.
 
 **Getting Started**
 
@@ -62,8 +62,8 @@
    ```
 
 2. Navigate to the provided local URL (usually http://localhost:8501).
-3. Upload your PDF documents using the interface or select from pre-loaded examples.
-4. Enter your question in the text box and submit to receive an answer based on the document's content.
+3. 2 PDF documents that contain our business are already uploaded in the interface, just select one of them.
+4. Enter your question in the text box and submit it to receive an answer based on the document's content.
 
 **Code Structure**
 
@@ -81,6 +81,11 @@
 3. **Index Creation:** Text embeddings are generated and stored using FAISS to create a searchable index.
 4. **User Interaction:** Users can ask questions through the web interface. The system retrieves relevant information from the indexed embeddings and generates a response using the conversational AI model (Gemini Pro).
 
+## **The ways i held to improve the performance of the system:**
+- **Using a better pdf parser:** One of the best ways to get better inference is reading the source of data correctly, so I tried many tools to find the best one for inference (PyPDFLoader).
+- **Selection of a better LLM model that does well with Arabic text:** This will help you use the tokenizer of the model to transfer learn it not to start from a bad point -Bad means the Model is not trained on Arabic data well- as I may use a super powerful model in English but weak on Arabic text which is misleading and deceptive.
+- **Select a good Vector DB:** One of the most familiar ones is FAISS it was good enough to proceed with it. (Replacements that I tried: Qdrant - Chroma - Weaviate)
+- **Prompt Engineering:** Very important factor that is not hard but has a very high impact on the system response.
 
 **FAQs**
 
@@ -89,5 +94,5 @@
 * **What types of questions can I ask?**
    - Chat PDF is designed to answer factual questions based on the content of the loaded PDF documents. The accuracy of the answers depends on the quality of the phrasing and the clarity of the information within the PDFs.
 * **Is there a limit to the size of the PDF?**
-   - Large PDFs are handled by splitting the text into smaller chunks. However, extremely large documents are not avaiable till now we limit it to be 200 mb as large ones may require more processing time.
+   - Large PDFs are handled by splitting the text into smaller chunks. However, extremely large documents are not available till now we limit them to 200 MB as large ones may require more processing time.
 
