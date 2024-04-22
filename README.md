@@ -1,7 +1,7 @@
 **Project Overview**
 
-* **Title:** Chat PDF - Interactive Document Query System
-* **Description:** Chat PDF is a web application that allows users to ask questions in natural language about the contents of uploaded PDFs. The system leverages advancements in generative AI and vector embeddings to deliver precise answers directly extracted from the PDF documents.
+* **Title:** Arabic Chat PDF - Interactive Document Query System
+* **Description:** Chat PDF is a web application that allows users to ask Arabic questions in natural language about the contents of uploaded PDFs. The system leverages advancements in generative AI and vector embeddings to deliver precise answers directly extracted from PDF documents.
 
 **Features**
 
@@ -16,9 +16,9 @@
 **Technology Stack**
 
 * **Streamlit:** A Python framework for rapidly developing web applications.
-* **Weaviate (Optional):** A vector database for storing and querying embeddings (not used in current implementation).
+* **Weaviate (Optional):** A vector database for storing and querying embeddings (not used in the current implementation).
 * **Google Generative AI:** Google's suite of AI services for generating text embeddings and answering questions in context.
-* **FAISS:** A library for efficient similarity search of vector embeddings.
+* **FAISS:** A vector database for storing and querying embeddings for efficient similarity search of vector embeddings
 * **PyPDFLoader:** A Python library for loading and extracting text from PDF files.
 * **LangChain:** A toolkit designed for building language model chains and prompts.
 
@@ -34,7 +34,7 @@
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Ahmedsamy96/Gemini-RAG
    cd chat-pdf
    ```
 
@@ -54,7 +54,7 @@
 1. Start the Streamlit application:
 
    ```bash
-   streamlit run app.py
+   streamlit run Rag_system.py
    ```
 
 2. Navigate to the provided local URL (usually http://localhost:8501).
@@ -75,7 +75,8 @@
 1. **Initialization:** Load configurations and API keys.
 2. **Document Processing:** When a PDF is uploaded or selected, the system extracts and processes the text content.
 3. **Index Creation:** Text embeddings are generated and stored using FAISS to create a searchable index.
-4. **User Interaction:** Users can ask questions through the web interface. The system retrieves relevant information from the indexed embeddings and generates a response using the conversational AI model.
+4. **User Interaction:** Users can ask questions through the web interface. The system retrieves relevant information from the indexed embeddings and generates a response using the conversational AI model (Gemini Pro).
+
 
 **FAQs**
 
@@ -84,8 +85,5 @@
 * **What types of questions can I ask?**
    Chat PDF is designed to answer factual questions based on the content of the loaded PDF documents. The accuracy of the answers depends on the quality of the phrasing and the clarity of the information within the PDFs.
 * **Is there a limit to the size of the PDF?**
-   Large PDFs are handled by splitting the text into smaller chunks. However, extremely large documents may require more processing time.
+   Large PDFs are handled by splitting the text into smaller chunks. However, extremely large documents are not avaiable till now we limit it to be 200 mb as large ones may require more processing time.
 
-**Support and Contribution**
-
-For bug
