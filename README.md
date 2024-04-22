@@ -5,6 +5,7 @@
 **Project Overview**
   
 * **Description:** Chat PDF is a web application that allows users to ask Arabic questions in natural language about the contents of uploaded PDFs. The system leverages advancements in generative AI and vector embeddings to deliver precise answers directly extracted from PDF documents.
+
 <hr>
 
 **Features**
@@ -17,6 +18,8 @@
 * **Natural Language Understanding (NLU):** Utilize generative AI models to comprehend user queries and generate relevant responses based on the document context.
 * **Interactive User Interface (UI):** User-friendly interface built with Streamlit for seamless interaction with the system.
 
+<hr>
+
 **Technology Stack**
 
 * **Streamlit:** A Python framework for rapidly developing web applications.
@@ -26,7 +29,9 @@
 * **PyPDFLoader:** A Python library for loading and extracting text from PDF files.
 * **LangChain:** A toolkit designed for building language model chains products and services in a simpler way.
 
-**Getting Started**
+<hr>
+
+### **Getting Started**
 
 **Prerequisites**
 
@@ -65,7 +70,9 @@
 3. 2 PDF documents that contain our business are already uploaded in the interface, just select one of them.
 4. Enter your question in the text box and submit it to receive an answer based on the document's content.
 
-**Code Structure**
+<hr>
+
+### **Code Structure**
 
 **Main Components**
 
@@ -73,19 +80,24 @@
 * **Text Processing:** The `get_text_chunks` function utilizes `langchain`'s `RecursiveCharacterTextSplitter` to split the extracted text into manageable chunks for further processing.
 * **Vector Embedding and Storing:** The `get_vector_store` function generates embeddings for the text chunks using Google's generative AI and stores them using FAISS for efficient retrieval.
 * **Query Handling:** The `user_input` function takes a user query as input, retrieves relevant information using vector similarity search, and generates a response using a generative AI model chained with a prompt template.
+<hr>
 
-**Workflow**
+### **Workflow**
 
 1. **Initialization:** Load configurations and API keys.
 2. **Document Processing:** When a PDF is uploaded or selected, the system extracts and processes the text content.
 3. **Index Creation:** Text embeddings are generated and stored using FAISS to create a searchable index.
 4. **User Interaction:** Users can ask questions through the web interface. The system retrieves relevant information from the indexed embeddings and generates a response using the conversational AI model (Gemini Pro).
 
-## **The ways i held to improve the performance of the system:**
+<hr>
+
+### **The ways i held to improve the performance of the system:**
 - **Using a better pdf parser:** One of the best ways to get better inference is reading the source of data correctly, so I tried many tools to find the best one for inference (PyPDFLoader).
 - **Selection of a better LLM model that does well with Arabic text:** This will help you use the tokenizer of the model to transfer learn it not to start from a bad point -Bad means the Model is not trained on Arabic data well- as I may use a super powerful model in English but weak on Arabic text which is misleading and deceptive.
 - **Select a good Vector DB:** One of the most familiar ones is FAISS it was good enough to proceed with it. (Replacements that I tried: Qdrant - Chroma - Weaviate)
 - **Prompt Engineering:** Very important factor that is not hard but has a very high impact on the system response.
+
+<hr>
 
 **Model Inference**
 The model in the trial is distinguished by 2 things:
@@ -94,6 +106,7 @@ The model in the trial is distinguished by 2 things:
 
 ![alt text](https://github.com/Ahmedsamy96/Gemini-RAG/blob/main/data/Inference.png)
 
+<hr>
 
 **FAQs**
 
