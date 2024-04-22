@@ -80,9 +80,8 @@
 * **Text Processing:** The `get_text_chunks` function utilizes `langchain`'s `RecursiveCharacterTextSplitter` to split the extracted text into manageable chunks for further processing.
 * **Vector Embedding and Storing:** The `get_vector_store` function generates embeddings for the text chunks using Google's generative AI and stores them using FAISS for efficient retrieval.
 * **Query Handling:** The `user_input` function takes a user query as input, retrieves relevant information using vector similarity search, and generates a response using a generative AI model chained with a prompt template.
-<hr>
 
-### **Workflow**
+**Workflow**
 
 1. **Initialization:** Load configurations and API keys.
 2. **Document Processing:** When a PDF is uploaded or selected, the system extracts and processes the text content.
