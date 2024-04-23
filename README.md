@@ -57,6 +57,7 @@
 
    * Navigate to your Streamlit app settings.
    * Add `WEAVIATE_API_KEY` (if using Weaviate) and `GOOGLE_API_KEY` to the secrets section.
+4. Deploy the App on cloud service as a web App, I used **Streamlit Cloud Service**.
 
 **Usage**
 
@@ -66,7 +67,7 @@
    streamlit run Rag_system.py
    ```
 
-2. Navigate to the provided local URL (usually http://localhost:8501).
+2. Navigate to the provided URL ( https://gemini-rag-monta-ai.streamlit.app/ ).
 3. 2 PDF documents that contain our business are already uploaded in the interface, just select one of them.
 4. Enter your question in the text box and submit it to receive an answer based on the document's content.
 
