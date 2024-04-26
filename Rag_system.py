@@ -35,7 +35,7 @@ def stream_data(text_input="Error With the system"):
         columns=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"],
     )
 
-    for word in _LOREM_IPSUM.split(" "):
+    for word in text_input.split(" "):
         yield word + " "
         time.sleep(0.02)
 
