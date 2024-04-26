@@ -91,7 +91,7 @@ def user_input(user_question):
     print(response)
     #st.write_stream("Reply: ", response["output_text"])
     with st.spinner("Generating response..."):
-        st.write_stream("Reply:", response["output_text"])
+        st.write_stream(response["output_text"])
 
 
 
