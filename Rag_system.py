@@ -25,8 +25,8 @@ static_pdf_file_1 = r"./data/Actual Budget Report 2022.pdf"
 static_pdf_file_2 = r"./data/Press Release - 2022 Results (Stock Market).pdf"
 
 @st.cache_data
-def stream_data():
-    for word in (response["output_text"]).split(" "):
+def stream_data(text_input):
+    for word in (texT_input).split(" "):
         yield word + " "
         time.sleep(0.02)
 
@@ -109,7 +109,7 @@ def user_input(user_question):
     print(response)
     #st.write_stream("Reply: ", response["output_text"])
     with st.spinner("Generating response..."):
-        st.write_stream(stream_data())
+        st.write_stream(stream_data(response["output_text"]))
 
 
 
