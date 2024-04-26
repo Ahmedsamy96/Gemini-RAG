@@ -99,6 +99,9 @@
 
 <hr>
 
+### **Testing & Evaluation Metrics**
+
+
 **Model Inference 📺**
 The model in the trial is distinguished by 2 things:
 - It does not elaborate on the answer. The easy, no-nonsense response
@@ -120,7 +123,11 @@ It would be like this:
 | The population of China is estimated to be over 1.4 billion.   | China, a vast East Asian nation, is home to diverse landscapes, from mountains, deserts, and plateaus to grasslands, steppes, and beaches. With a population exceeding 1.4 billion, it is the world's most populous country. |
 | The tallest mountain in the world is Mount Everest.            | The Himalayas, a mountain range in Asia, houses some of the Earth's highest peaks, including Mount Everest, the world's tallest mountain. |
 
-
+Then i have two approaches to take:
+1. **The Dummy Approach:**
+     - I simply will use the above created dataset (The valid one) and apply a semantic similarity using a familiar embedding model from (Sentence Transformers) the will be based on context understanding. 
+3. **The Trending Approach:**
+    - dvdfvdf
 
 <hr>
 
