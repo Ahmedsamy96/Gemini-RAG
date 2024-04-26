@@ -26,7 +26,7 @@ static_pdf_file_2 = r"./data/Press Release - 2022 Results (Stock Market).pdf"
 
 @st.cache_resource  # 👈 Add the caching decorator
 def stream_data(text_input="Error With the system"):
-    for word in (texT_input).split(" "):
+    for word in (text_input).split(" "):
         yield word + " "
         time.sleep(0.02)
 
