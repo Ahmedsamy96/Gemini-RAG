@@ -1,4 +1,5 @@
 import os
+import numpy as np
 import streamlit as st
 import weaviate
 from langchain_weaviate.vectorstores import WeaviateVectorStore
@@ -21,6 +22,20 @@ static_pdf_file_1 = r"./data/Actual Budget Report 2022.pdf"
 static_pdf_file_2 = r"./data/Press Release - 2022 Results (Stock Market).pdf"
 
 @st.cache_data
+def stream_data():
+    for word in (response["output_text"]).split(" "):
+        yield word + " "
+        time.sleep(0.02)
+
+    yield pd.DataFrame(
+        np.random.randn(5, 10),
+        columns=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"],
+    )
+
+    for word in _LOREM_IPSUM.split(" "):
+        yield word + " "
+        time.sleep(0.02)
+
 
 def get_pdf_text(pdf_docs):
     text = ""
@@ -91,7 +106,7 @@ def user_input(user_question):
     print(response)
     #st.write_stream("Reply: ", response["output_text"])
     with st.spinner("Generating response..."):
-        st.write_stream(response["output_text"])
+        st.write_stream(stream_data())
 
 
 
