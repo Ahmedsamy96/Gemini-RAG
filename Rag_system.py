@@ -107,7 +107,7 @@ def user_input(user_question):
         , return_only_outputs=True)
 
     #st.write_stream("Reply: ", response["output_text"])
-    stream_data(text_input = f"""{response["output_text"]}""")
+    st.write(stream_data(text_input = f"""{response["output_text"]}"""))
     #st.write_stream(stream_data(text_input = f"""{response["output_text"]}"""))
 
 
