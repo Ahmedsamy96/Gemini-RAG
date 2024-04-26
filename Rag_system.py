@@ -106,10 +106,8 @@ def user_input(user_question):
         {"input_documents":docs, "question": user_question}
         , return_only_outputs=True)
 
-    print(response)
     #st.write_stream("Reply: ", response["output_text"])
-    with st.spinner("Generating response..."):
-        st.write_stream(stream_data(text_input = f"""{response["output_text"]}"""))
+    st.write_stream(stream_data(text_input = f"""{response["output_text"]}"""))
 
 
 
