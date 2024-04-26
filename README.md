@@ -127,7 +127,11 @@ Then i have two approaches to take:
 1. **The Dummy Approach:**
      - I simply will use the above created dataset (The valid one) and apply a semantic similarity using a familiar embedding model from (Sentence Transformers) the will be based on context understanding. 
 3. **The Trending Approach:**
-    - dvdfvdf
+    - Using **RAGAS** package
+    - RAGAs (Retrieval-Augmented Generation Assessment) is a framework (GitHub, Docs) that provides you with the necessary ingredients to help you evaluate your RAG pipeline on a component level.
+    - I tried it but there way a problem with customizing it on the Gemeni Generated Text, But I do beleive it's Doable but may consume more time from me.
+    - Check my trial in this script (System_Eval.py)
+    - Here you can take a detailed look on it: https://towardsdatascience.com/evaluating-rag-applications-with-ragas-81d67b0ee31a
 
 <hr>
 
