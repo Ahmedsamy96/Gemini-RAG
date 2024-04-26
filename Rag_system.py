@@ -30,14 +30,6 @@ def stream_data(text_input="Error With the system"):
         yield word + " "
         time.sleep(0.02)
 
-    yield pd.DataFrame(
-        np.random.randn(5, 10),
-        columns=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"],
-    )
-
-    for word in text_input.split(" "):
-        yield word + " "
-        time.sleep(0.02)
 
 
 def get_pdf_text(pdf_docs):
