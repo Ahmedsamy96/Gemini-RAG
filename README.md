@@ -1,6 +1,6 @@
 # Arabic Chat PDF - Interactive Document Query System
 
-![alt text](https://github.com/Ahmedsamy96/Gemini-RAG/blob/main/data/BG.jpeg)
+![alt text](https://github.com/Ahmedsamy96/Gemini-RAG/blob/main/data/arabic-Design.png)
 
 **Project Overview 🤷‍♂️**
   
