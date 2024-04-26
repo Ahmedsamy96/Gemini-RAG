@@ -89,7 +89,9 @@ def user_input(user_question):
         , return_only_outputs=True)
 
     print(response)
-    st.write("Reply: ", response["output_text"])
+    #st.write_stream("Reply: ", response["output_text"])
+    with st.spinner("Generating response..."):
+        st.write_stream("Reply:", response["output_text"])
 
 
 
