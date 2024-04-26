@@ -108,6 +108,20 @@ The model in the trial is distinguished by 2 things:
 
 ![alt text](https://github.com/Ahmedsamy96/Gemini-RAG/blob/main/data/Inference.png)
 
+**Evaluation of the System 🪜**
+Actually, the evaluation of LLM based system is not that easy task as it's based on the ground truth side.
+Then based on my understanding, I do believe that I need to create a table of 2 columns ( Model Inference (Generated Text) | Ground Truth Text )
+So I'm in need of creating this dataframe and the more it's general from different places of the document the more the data is robust.
+
+It would be like this:
+| Model Inference (Generated Text)                               | Ground Truth Text                                                                                                                  |
+|----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| The capital of France is Paris.                                | France is a European country with a rich history and culture. Its capital, Paris, is a world-renowned center for art, fashion, and food. |
+| The population of China is estimated to be over 1.4 billion.   | China, a vast East Asian nation, is home to diverse landscapes, from mountains, deserts, and plateaus to grasslands, steppes, and beaches. With a population exceeding 1.4 billion, it is the world's most populous country. |
+| The tallest mountain in the world is Mount Everest.            | The Himalayas, a mountain range in Asia, houses some of the Earth's highest peaks, including Mount Everest, the world's tallest mountain. |
+
+
+
 <hr>
 
 **FAQs**
