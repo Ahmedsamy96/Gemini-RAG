@@ -24,9 +24,7 @@ genai.configure(api_key=GOOGLE_API_KEY)
 static_pdf_file_1 = r"./data/Actual Budget Report 2022.pdf"
 static_pdf_file_2 = r"./data/Press Release - 2022 Results (Stock Market).pdf"
 
-@st.cache_data
 @st.cache_resource  # 👈 Add the caching decorator
-
 def stream_data(text_input):
     for word in (texT_input).split(" "):
         yield word + " "
