@@ -23,6 +23,7 @@ genai.configure(api_key=GOOGLE_API_KEY)
 
 static_pdf_file_1 = r"./data/AhmedSamy-DataScientist2024 (1).pdf"
 static_pdf_file_2 = r"./data/Profile.pdf"
+static_pdf_file_3 = r"./data/CV_arabic_content.pdf"
 
 @st.cache_resource
 def stream_data(text_input="Error With the system"):
@@ -84,7 +85,7 @@ def main():
 
     with st.sidebar:
         st.title("🙋🙋")
-        static_files = [static_pdf_file_1, static_pdf_file_2]
+        static_files = [static_pdf_file_1, static_pdf_file_2, static_pdf_file_3]
 
         # Add an image in the sidebar
         sidebar_image_path = './data/samy.jpg'
