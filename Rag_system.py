@@ -86,12 +86,12 @@ def main():
         st.title("Menu:")
         static_files = [static_pdf_file_1, static_pdf_file_2]
         
-        if st.button("Submit & Process"):
-            with st.spinner("Processing..."):
-                raw_text = get_pdf_text(static_files)
-                text_chunks = get_text_chunks(raw_text)
-                get_vector_store(text_chunks)
-                st.success("Done")
+        #if st.button("Submit & Process"):
+        #with st.spinner("Processing..."):
+        raw_text = get_pdf_text(static_files)
+        text_chunks = get_text_chunks(raw_text)
+        get_vector_store(text_chunks)
+        st.success("Done")
 
 if __name__ == "__main__":
     main()
