@@ -74,7 +74,7 @@ def user_input(user_question):
 
 def main():
     st.set_page_config(page_title="Chat PDF", page_icon=":speech_balloon:")
-    st.header("Chat with PDF using Gemini")
+    st.header("Hello, I'm Ahmed Samy - Chat with Me 👨‍🏫😀")
     image_path = 'data/BG.jpeg'
     st.image(image_path, caption='Interactive Chat with Document', width=700)
 
@@ -85,6 +85,10 @@ def main():
     with st.sidebar:
         st.title("Menu:")
         static_files = [static_pdf_file_1, static_pdf_file_2]
+
+        # Add an image in the sidebar
+        sidebar_image_path = './data/samy.jpg'
+        st.image(sidebar_image_path, caption='Sidebar Image', width=200)
         
         #if st.button("Submit & Process"):
         #with st.spinner("Processing..."):
