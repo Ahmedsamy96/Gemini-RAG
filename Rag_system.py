@@ -88,7 +88,7 @@ def main():
 
         # Add an image in the sidebar
         sidebar_image_path = './data/samy.jpg'
-        st.image(sidebar_image_path, width=400)
+        st.image(sidebar_image_path, width=300)
         
         #if st.button("Submit & Process"):
         #with st.spinner("Processing..."):
