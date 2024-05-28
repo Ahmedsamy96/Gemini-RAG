@@ -74,16 +74,16 @@ def user_input(user_question):
 
 def main():
     st.set_page_config(page_title="Chat PDF", page_icon=":speech_balloon:")
-    st.header("Hello, I'm Ahmed Samy - Chat with Me 👨‍🏫😀")
+    st.header("Hello, I'm Ahmed Samy -Chat with Me 👨‍🏫😀")
     image_path = 'data/BG.jpeg'
-    st.image(image_path, caption='Interactive Chat with Document', width=700)
+    st.image(image_path, width=700)
 
     user_question = st.text_input("Ask a Question:")
     if user_question:
         user_input(user_question)
 
     with st.sidebar:
-        st.title("Menu:")
+        st.title("🙋🙋")
         static_files = [static_pdf_file_1, static_pdf_file_2]
 
         # Add an image in the sidebar
