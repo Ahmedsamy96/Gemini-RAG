@@ -21,8 +21,8 @@ WEAVIATE_API_KEY = st.secrets["WEAVIATE_API_KEY"]
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 genai.configure(api_key=GOOGLE_API_KEY)
 
-static_pdf_file_1 = r"./data/Actual Budget Report 2022.pdf"
-static_pdf_file_2 = r"./data/Press Release - 2022 Results (Stock Market).pdf"
+static_pdf_file_1 = r"./data/AhmedSamy-DataScientist2024 (1).pdf" 
+static_pdf_file_2 = r"./data/Profile.pdf"
 
 @st.cache_resource  # 👈 Add the caching decorator
 def stream_data(text_input="Error With the system"):
